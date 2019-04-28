@@ -1,0 +1,28 @@
+<div class="newsdiv">
+    <div class="newshead d-flex">
+        <div class="flex-fill">
+            <h5 class="newsheader">News and Updates</h5>
+        </div>
+            <div class="flex-fill">
+          <button class="viewallbutton" type="button" name="viewall" style="float:right">view all</button>
+          </div>
+     
+      </div>
+  <div class="newscontent">
+  <div class=" container-fluid news-slider">
+      <div class="row mySlides fad" *ngFor="let newsarray of newschunk">
+          <div class=" col-xl-2 col-lg-2 col-md-2 col-sm-2 newsitem" *ngFor="let item of newsarray">
+              <mat-card class="insidecard newscard">
+                <img mat-card-image [src]="item.img" class="newimage">
+                <mat-card-content>
+                    <div class="newsdetails">
+                      {{item.description}}
+                    </div>
+                  </mat-card-content>
+              </mat-card>
+            </div>
+      </div>
+      <a class="pre" (click)="plusSlides(-1)">&#10094;</a>
+        <a class="nex" (click)="plusSlides(1)">&#10095;</a>
+  </div>
+  </div>
